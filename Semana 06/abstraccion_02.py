@@ -1,28 +1,28 @@
-# Importamos las herramientas necesarias para crear clases abstractas
+# Importamos para crear clases abstractas
 from abc import ABC, abstractmethod
 
-# Clase abstracta Vehiculo (hereda de ABC para poder definir métodos abstractos)
+# Clase abstracta Vehiculo 
 class Vehiculo(ABC):
     # Constructor de la clase Vehiculo
     def __init__(self, dueño, marca, año):
-        # Atributos comunes para todos los vehículos
+        # Definimos atributos
         self.dueño = dueño
         self.marca = marca
         self.año = año
         
-    # Método abstracto: las subclases estarán obligadas a implementarlo
+    # Método abstracto
     @abstractmethod
     def datos(self):
-        pass  # Aquí no se implementa nada, solo se define la "plantilla"
+        pass  
     
 
 # Clase Carro que hereda de Vehiculo
 class Carro(Vehiculo):
-    # Constructor de Carro (agregamos un atributo extra: color)
+    # Constructor de Carro 
     def __init__(self, dueño, marca, año, color):
-        # Llamamos al constructor de la clase padre (Vehiculo)
+        # Llamamos al constructor de la Super Clase (Vehiculo)
         super().__init__(dueño, marca, año)
-        self.color = color  # Atributo propio de Carro
+        self.color = color  # Añadimos un atributo
         
     # Implementación del método abstracto "datos"
     def datos(self):
@@ -39,3 +39,4 @@ object1 = Carro("Johan", "Toyota", 2020, "Rojo")
 
 # Imprimimos los datos del vehículo usando el método sobrescrito
 print(object1.datos())
+
