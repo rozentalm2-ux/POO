@@ -1,28 +1,28 @@
-# Importamos lo necesario para usar clases y métodos abstractos
+# Importamos para usar clases y métodos abstractos
 from abc import ABC, abstractmethod
 
-# Clase abstracta Animal (hereda de ABC para definir métodos abstractos)
+# Clase abstracta Animal 
 class Animal(ABC):
     # Constructor de la clase Animal
     def __init__(self, nombre, edad, tamaño):
-        # Atributos comunes para todos los animales
+        # Atributos
         self.nombre = nombre
         self.edad = edad
         self.tamaño = tamaño
         
-    # Método abstracto: las subclases deben implementarlo obligatoriamente
+    # Método abstracto
     @abstractmethod
     def datos(self):
-        pass  # Aquí solo se declara, no se implementa
+        pass  
     
 
 # Clase Perro que hereda de Animal
 class Perro(Animal):
-    # Constructor de Perro (agregamos un atributo extra: color)
+    # Constructor de Perro 
     def __init__(self, nombre, edad, tamaño, color):
-        # Llamamos al constructor de la clase padre (Animal)
+        # Llamamos al constructor de la super clase (Animal)
         super().__init__(nombre, edad, tamaño)
-        self.color = color  # Atributo propio de Perro
+        self.color = color  # Agregamos ese atributo
         
     # Implementación del método abstracto "datos"
     def datos(self):
@@ -39,3 +39,4 @@ object1 = Perro("Boby", 10, "Grande", "Rosado")
 
 # Imprimimos los datos del animal usando el método sobrescrito
 print(object1.datos())
+
